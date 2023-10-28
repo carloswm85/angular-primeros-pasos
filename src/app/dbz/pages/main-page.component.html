@@ -1,0 +1,33 @@
+<h1>DBZ Personajes</h1>
+
+<div class="row">
+  <div class="col">
+
+    <!-- send list from parent to child -->
+    <dbz-list
+      [characterList]="characters"
+      (onDeleteByIdEvent)="onDeleteCharacterById($event)">
+    </dbz-list>
+
+  </div>
+
+  <div class="col">
+    <dbz-add-character
+      (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+</div>
+
+<!--
+
+  //NOTE
+
+  // this is an event
+  (ngSubmit)="emitCharacter()"
+
+  // this is an attribute
+  [characterList]="characters"
+
+  // this is...
+  [(ngModel)]="character.name"
+
+ -->
